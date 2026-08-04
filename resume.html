@@ -19,10 +19,15 @@
 <div class="resume-container">
   <h1>Resume</h1>
 
-  <button onclick="window.open('assets/resume.pdf')">Download PDF</button>
+  <div class="resume-buttons">
+    <button onclick="window.open('assets/resume.pdf')">Download PDF</button>
+    <button class="open-tab" onclick="window.open('assets/resume.pdf', '_blank')">
+      Open in New Tab (More Legible)
+    </button>
+  </div>
 
   <div class="pdf-wrapper">
-    <iframe src="assets/resume.jpg#zoom=page-fit"></iframe>
+    <img src="assets/resume.jpg" class="resume-image" alt="Resume Preview">
   </div>
 </div>
 
