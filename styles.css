@@ -182,3 +182,9 @@ html, body {
   height: 100%;
   border: none;
 }
+.resume-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 16px;
+}
