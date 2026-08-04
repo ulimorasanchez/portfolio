@@ -1,39 +1,131 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Resume</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Nunito:wght@300;400;600;700&display=swap');
 
-<body class="resume-page">
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #eef2ff, #e0e7ff);
+  color: #1e1e1e;
+  animation: fadeIn 0.8s ease-in-out;
+}
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="projects.html">Projects</a>
-  <a href="resume.html">Resume</a>
-  <a href="contact.html">Contact</a>
-</nav>
+/* ---------------- NAV ---------------- */
 
-<div class="resume-container">
-  <h1>Resume</h1>
+nav {
+  background: #ffffffcc;
+  backdrop-filter: blur(12px);
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  border-bottom: 1px solid #c7d2fe;
+}
 
-  <div class="resume-buttons">
-    <button onclick="window.open('assets/resume.pdf')">Download PDF</button>
-    <button class="open-tab" onclick="window.open('assets/resume.pdf', '_blank')">
-      Open in New Tab (More Legible)
-    </button>
-  </div>
+nav a {
+  color: #7c3aed; /* purple */
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 17px;
+  transition: 0.25s;
+}
 
-  <img src="assets/resume.png" alt="Resume Preview" class="resume-image">
-</div>
+nav a:hover {
+  color: #a78bfa; /* lighter purple */
+  text-shadow: 0px 0px 6px #c4b5fd;
+  transform: translateY(-2px);
+}
 
-<footer>
-  © 2026 Ulises • 
-  <a href="mailto:ulimoratech@gmail.com">ulimoratech@gmail.com</a> • 
-  <a href="https://www.linkedin.com/in/ulises-mora-061217271" target="_blank">LinkedIn</a>
-</footer>
+/* ---------------- FOOTER ---------------- */
 
-</body>
-</html>
+footer {
+  padding: 20px;
+  text-align: center;
+  background: #ffffffcc;
+  backdrop-filter: blur(10px);
+  color: #374151;
+  border-top: 1px solid #c7d2fe;
+}
+
+footer a {
+  color: #4f46e5;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #4338ca;
+}
+
+/* ------------------------------------------ */
+/* RESUME PAGE — IMAGE PREVIEW, NO SCROLLBAR  */
+/* ------------------------------------------ */
+
+html, body {
+  height: 100%;
+}
+
+.resume-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.resume-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Purple title */
+.resume-container h1 {
+  margin: 10px 0 20px;
+  color: #7c3aed;
+  font-family: 'Nunito', sans-serif;
+}
+
+/* Cute dual buttons */
+.resume-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+button {
+  background: #7c3aed; /* purple */
+  border: none;
+  padding: 12px 25px;
+  color: white;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.25s;
+  box-shadow: 0px 4px 10px #00000020;
+}
+
+button:hover {
+  background: #5b21b6;
+  transform: scale(1.06);
+}
+
+/* Secondary cute button */
+.open-tab {
+  background: #a78bfa;
+  color: #2d1b69;
+}
+
+.open-tab:hover {
+  background: #8b5cf6;
+  transform: scale(1.06);
+}
+
+/* Resume image preview */
+.resume-image {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0px 4px 12px #00000015;
+  background: #ffffffee;
+  backdrop-filter: blur(10px);
+}
