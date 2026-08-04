@@ -8,7 +8,10 @@ body {
   animation: fadeIn 0.8s ease-in-out;
 }
 
-/* ---------------- NAV ---------------- */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 
 nav {
   background: #ffffffcc;
@@ -18,10 +21,17 @@ nav {
   justify-content: center;
   gap: 30px;
   border-bottom: 1px solid #c7d2fe;
+  animation: slideDown 0.6s ease;
 }
 
+@keyframes slideDown {
+  from { transform: translateY(-30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* 💜 Purple nav titles */
 nav a {
-  color: #7c3aed; /* purple */
+  color: #7c3aed;
   text-decoration: none;
   font-weight: 600;
   font-size: 17px;
@@ -29,12 +39,82 @@ nav a {
 }
 
 nav a:hover {
-  color: #a78bfa; /* lighter purple */
+  color: #a78bfa;
   text-shadow: 0px 0px 6px #c4b5fd;
   transform: translateY(-2px);
 }
 
-/* ---------------- FOOTER ---------------- */
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 20px;
+  animation: fadeInUp 0.8s ease;
+}
+
+@keyframes fadeInUp {
+  from { transform: translateY(25px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* 💜 Purple titles */
+h1 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 42px;
+  color: #7c3aed;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-family: 'Nunito', sans-serif;
+  color: #7c3aed;
+}
+
+.card {
+  background: #ffffffee;
+  backdrop-filter: blur(10px);
+  padding: 25px;
+  border-radius: 16px;
+  margin-bottom: 25px;
+  box-shadow: 0px 4px 12px #00000015;
+  transition: 0.25s;
+  border: 1px solid #e5e0ff;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 6px 18px #00000025;
+  border-color: #c4b5fd;
+}
+
+.card a {
+  color: #7c3aed;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.25s;
+}
+
+.card a:hover {
+  color: #a78bfa;
+  text-shadow: 0px 0px 6px #c4b5fd;
+}
+
+button {
+  background: #7c3aed;
+  border: none;
+  padding: 12px 25px;
+  color: white;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.25s;
+}
+
+button:hover {
+  background: #5b21b6;
+  transform: scale(1.05);
+}
 
 footer {
   padding: 20px;
@@ -46,86 +126,59 @@ footer {
 }
 
 footer a {
-  color: #4f46e5;
+  color: #7c3aed;
   font-weight: 600;
   text-decoration: none;
 }
 
 footer a:hover {
-  color: #4338ca;
+  color: #a78bfa;
 }
 
-/* ------------------------------------------ */
-/* RESUME PAGE — IMAGE PREVIEW, NO SCROLLBAR  */
-/* ------------------------------------------ */
-
+/* Resume page */
 html, body {
   height: 100%;
 }
 
 .resume-page {
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .resume-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
   max-width: 900px;
   margin: 0 auto;
-  padding: 20px;
-  text-align: center;
 }
 
-/* Purple title */
 .resume-container h1 {
-  margin: 10px 0 20px;
-  color: #7c3aed;
-  font-family: 'Nunito', sans-serif;
+  margin: 10px 0;
 }
 
-/* Cute dual buttons */
-.resume-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-bottom: 20px;
+.resume-container button {
+  margin-bottom: 10px;
 }
 
-button {
-  background: #7c3aed; /* purple */
-  border: none;
-  padding: 12px 25px;
-  color: white;
-  font-weight: 600;
-  border-radius: 12px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: 0.25s;
-  box-shadow: 0px 4px 10px #00000020;
-}
-
-button:hover {
-  background: #5b21b6;
-  transform: scale(1.06);
-}
-
-/* Secondary cute button */
-.open-tab {
-  background: #a78bfa;
-  color: #2d1b69;
-}
-
-.open-tab:hover {
-  background: #8b5cf6;
-  transform: scale(1.06);
-}
-
-/* Resume image preview */
-.resume-image {
-  width: 100%;
+.pdf-wrapper {
+  flex: 1;
+  position: relative;
   border-radius: 16px;
-  box-shadow: 0px 4px 12px #00000015;
   background: #ffffffee;
   backdrop-filter: blur(10px);
+  box-shadow: 0px 4px 12px #00000015;
+  overflow: hidden;
+}
+
+.pdf-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
 }
