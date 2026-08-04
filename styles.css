@@ -141,11 +141,13 @@ html, body {
 }
 
 .resume-page {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow-x: hidden; /* only hide sideways scroll */
+  overflow-y: auto;   /* allow vertical scrolling */
 }
+
 
 .resume-container {
   flex: 1;
