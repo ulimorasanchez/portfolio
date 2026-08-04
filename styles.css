@@ -72,10 +72,51 @@ html, body {
   text-align: center;
 }
 
+/* Purple title */
 .resume-container h1 {
   margin: 10px 0 20px;
+  color: #7c3aed; /* purple */
+  font-family: 'Nunito', sans-serif;
 }
 
+/* Cute dual buttons */
+.resume-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+button {
+  background: #7c3aed; /* purple */
+  border: none;
+  padding: 12px 25px;
+  color: white;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.25s;
+  box-shadow: 0px 4px 10px #00000020;
+}
+
+button:hover {
+  background: #5b21b6;
+  transform: scale(1.06);
+}
+
+/* Secondary cute button */
+.open-tab {
+  background: #a78bfa;
+  color: #2d1b69;
+}
+
+.open-tab:hover {
+  background: #8b5cf6;
+  transform: scale(1.06);
+}
+
+/* Resume image preview */
 .resume-image {
   width: 100%;
   border-radius: 16px;
