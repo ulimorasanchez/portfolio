@@ -108,6 +108,16 @@ footer {
   border-top: 1px solid #c7d2fe;
 }
 
+footer a {
+  color: #4f46e5;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #4338ca;
+}
+
 /* -------------------------------------------------- */
 /*  RESUME PAGE — NO SCROLL, PDF FITS SCREEN          */
 /* -------------------------------------------------- */
@@ -117,9 +127,9 @@ html, body {
 }
 
 .resume-page {
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  height: 100vh;
   overflow: hidden; /* removes page scroll */
 }
 
@@ -127,16 +137,16 @@ html, body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 0 20px; /* remove vertical padding */
+  padding: 0; /* remove vertical padding */
   max-width: 900px;
-  margin: auto;
+  margin: 0 auto;
 }
 
 .resume-container h1 {
   margin: 10px 0; /* reduce height */
 }
 
-button {
+.resume-container button {
   margin-bottom: 10px; /* reduce spacing */
 }
 
@@ -147,7 +157,7 @@ button {
   background: #ffffffee;
   backdrop-filter: blur(10px);
   box-shadow: 0px 4px 12px #00000015;
-  overflow: hidden;
+  overflow: hidden; /* removes iframe scroll */
 }
 
 .pdf-wrapper iframe {
