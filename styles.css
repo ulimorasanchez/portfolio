@@ -127,7 +127,7 @@ form textarea {
   resize: none;
 }
 
-/* ---------- TYPING ANIMATION ---------- */
+/* ---------- SIMPLE TYPING ANIMATION ---------- */
 .typing {
   font-size: 20px;
   font-weight: 600;
@@ -135,18 +135,15 @@ form textarea {
   white-space: nowrap;
   overflow: hidden;
   border-right: 3px solid #c4b5fd;
-  width: 0;
-  animation: typing 3s steps(40) forwards, blink 0.7s infinite;
+  animation: typing 2.5s steps(40, end), blink 0.7s step-end 4;
   margin-bottom: 25px;
 }
 
 @keyframes typing {
   from { width: 0; }
-  to { width: 420px; }
+  to { width: 100%; }
 }
 
 @keyframes blink {
   50% { border-color: transparent; }
 }
-
-
