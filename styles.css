@@ -1,19 +1,20 @@
-/* ---------- GLOBAL ---------- */
+/* ---------- GLOBAL DARK THEME ---------- */
 body {
   margin: 0;
   padding: 0;
   font-family: 'Inter', sans-serif;
-  background: #f5f3ff;
-  color: #1f1f1f;
+  background: #0f0a1f;
+  color: #e5e3ff;
 }
 
 h1, h2, h3 {
   font-weight: 700;
-  color: #4c1d95;
+  color: #c4b5fd;
 }
 
 p {
   line-height: 1.7;
+  color: #dcd7ff;
 }
 
 /* ---------- NAV ---------- */
@@ -22,13 +23,13 @@ nav {
   justify-content: center;
   gap: 25px;
   padding: 20px;
-  background: #ede9fe;
-  border-bottom: 1px solid #ddd;
+  background: #1a132f;
+  border-bottom: 1px solid #3f2c78;
 }
 
 nav a {
   text-decoration: none;
-  color: #4c1d95;
+  color: #c4b5fd;
   font-weight: 600;
   padding: 8px 14px;
   border-radius: 8px;
@@ -36,23 +37,23 @@ nav a {
 }
 
 nav a:hover {
-  background: #c4b5fd;
+  background: #3f2c78;
 }
 
 /* ---------- CONTAINER ---------- */
 .container {
-  max-width: 900px;
-  margin: 40px auto;
+  max-width: 1100px;
+  margin: 60px auto;
   padding: 20px;
 }
 
 /* ---------- CARD ---------- */
 .card {
-  background: white;
+  background: #1a132f;
   padding: 35px;
   border-radius: 22px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-  border: 1px solid #e9d5ff;
+  border: 1px solid #3f2c78;
+  box-shadow: 0 0 25px rgba(128, 90, 213, 0.25);
   margin-bottom: 40px;
 }
 
@@ -77,43 +78,68 @@ footer {
   text-align: center;
   padding: 25px;
   margin-top: 40px;
-  background: #ede9fe;
-  color: #4c1d95;
+  background: #1a132f;
+  color: #c4b5fd;
+  border-top: 1px solid #3f2c78;
 }
 
 footer a {
-  color: #4c1d95;
+  color: #c4b5fd;
   font-weight: 600;
   text-decoration: none;
 }
 
-/* ---------- RESUME PAGE ---------- */
-.resume-page {
-  background: #f5f3ff;
+/* ---------- GRID INFO BOXES ---------- */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-bottom: 35px;
 }
 
-.resume-container {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 20px;
+.info-item {
+  background: #140d29;
+  padding: 18px;
+  border-radius: 12px;
+  border: 1px solid #3f2c78;
 }
 
-.resume-buttons {
-  margin-bottom: 20px;
+.info-item h3 {
+  margin: 0;
+  font-size: 14px;
+  color: #a78bfa;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.resume-image {
-  width: 100%;
-  border-radius: 16px;
-  border: 1px solid #e9d5ff;
+.info-item p {
+  margin: 6px 0 0;
+  font-size: 16px;
 }
 
-/* ---------- FORM ---------- */
-input, textarea {
-  border: 1px solid #d8b4fe !important;
-}
-
-label {
+/* ---------- CURSOR TYPING ANIMATION ---------- */
+.typing {
+  font-size: 20px;
   font-weight: 600;
-  color: #4c1d95;
+  color: #c4b5fd;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #c4b5fd;
+  width: 0;
+  animation: typing 3s steps(40) forwards, blink 0.7s infinite;
+  margin-bottom: 25px;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 420px; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* ---------- IMAGE ---------- */
+img {
+  border-radius: 18px;
 }
