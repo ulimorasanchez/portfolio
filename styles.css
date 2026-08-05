@@ -55,3 +55,36 @@ nav a:hover {
   border-radius: 22px;
   border: 1px solid #3f2c78;
   box-shadow: 0 0 25px rgba(128, 90, 213, 0.25);
+  
+/* ---------- CUSTOM PURPLE CURSOR ---------- */
+.cursor-dot,
+.cursor-outline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: #c4b5fd;
+}
+
+.cursor-outline {
+  width: 32px;
+  height: 32px;
+  background: rgba(128, 90, 213, 0.35);
+  filter: blur(10px);
+  transition: transform 0.15s ease-out;
+}
+
+@media (max-width: 768px) {
+  .cursor-dot,
+  .cursor-outline {
+    display: none;
+  }
+}
