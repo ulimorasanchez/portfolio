@@ -150,14 +150,14 @@ form textarea {
 @keyframes blink {
   50% { border-color: transparent; }
 }
-/* ---------- FULLSCREEN VERTICAL PURPLE BINARY RAIN ---------- */
+/* ---------- SOFT VERTICAL PURPLE BINARY BACKGROUND ---------- */
 body {
   background: #0f0a1f;
   position: relative;
   overflow: hidden;
 }
 
-/* Binary rain layer */
+/* Binary columns */
 body::before {
   content: "";
   position: fixed;
@@ -168,31 +168,27 @@ body::before {
   pointer-events: none;
   z-index: -1;
 
-  /* Create vertical binary columns */
-  background-image: 
-    linear-gradient(
-      rgba(128, 90, 213, 0.4) 0%,
-      rgba(128, 90, 213, 0.15) 100%
-    ),
+  /* vertical binary stripes */
+  background-image:
     repeating-linear-gradient(
-      to bottom,
-      transparent 0px,
-      transparent 40px,
-      rgba(196, 181, 253, 0.25) 40px,
-      rgba(196, 181, 253, 0.25) 80px
+      to right,
+      rgba(128, 90, 213, 0.15) 0px,
+      rgba(128, 90, 213, 0.15) 2px,
+      transparent 2px,
+      transparent 80px
     );
 
-  background-size: 100% 200%;
-  animation: binaryFall 6s linear infinite;
-  filter: drop-shadow(0 0 6px #a259ff);
+  /* gentle shimmer */
+  animation: shimmer 6s ease-in-out infinite alternate;
+  opacity: 0.35; /* calmer, not overwhelming */
 }
 
-@keyframes binaryFall {
+@keyframes shimmer {
   from {
-    background-position: 0 0;
+    filter: drop-shadow(0 0 2px #a259ff);
   }
   to {
-    background-position: 0 200%;
+    filter: drop-shadow(0 0 6px #c4b5fd);
   }
 }
 
