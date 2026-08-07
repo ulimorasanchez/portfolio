@@ -69,17 +69,20 @@ nav a:hover {
   z-index: 9999;
 }
 
+/* Purple center dot */
 .cursor-dot {
   width: 8px;
   height: 8px;
-  background: #c4b5fd;
+  background: #c4b5fd; /* your purple */
 }
 
+/* Clean gray circle outline */
 .cursor-outline {
   width: 32px;
   height: 32px;
-  background: rgba(128, 90, 213, 0.35);
-  filter: blur(10px);
+  border: 2px solid #bfbfbf; /* light gray */
+  background: transparent;   /* remove purple glow */
+  filter: none;              /* remove blur */
   transition: transform 0.15s ease-out;
 }
 
