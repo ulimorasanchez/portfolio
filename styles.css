@@ -150,3 +150,46 @@ form textarea {
 @keyframes blink {
   50% { border-color: transparent; }
 }
+/* ---------- ANIMATED PURPLE BINARY BACKGROUND ---------- */
+body {
+  background: #0f0a1f;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "010101001110100101001011010010101001011010010101001011";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 22px;
+  line-height: 22px;
+  color: rgba(196, 181, 253, 0.15); /* soft purple */
+  pointer-events: none;
+  z-index: -1;
+
+  /* neon glow */
+  text-shadow: 0 0 8px rgba(128, 90, 213, 0.6);
+
+  /* repeating binary pattern */
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0%,
+    transparent 50%,
+    rgba(128, 90, 213, 0.05) 100%
+  );
+
+  animation: binaryRain 12s linear infinite;
+}
+
+@keyframes binaryRain {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}
+
