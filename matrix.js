@@ -16,7 +16,7 @@ function drawStaticBackground() {
   ctx.fillStyle = "#0f0a1f";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  ctx.fillStyle = "rgba(196, 181, 253, 0.15)"; // very dim
+  ctx.fillStyle = "rgba(196, 181, 253, 0.12)"; // very dim background numbers
   ctx.font = fontSize + "px monospace";
 
   for (let x = 0; x < columns; x++) {
@@ -29,10 +29,11 @@ function drawStaticBackground() {
 
 // Draw slow falling numbers
 function drawRain() {
-  ctx.fillStyle = "rgba(15, 10, 31, 0.05)";
+  // VERY subtle fade so rain stands out
+  ctx.fillStyle = "rgba(15, 10, 31, 0.03)";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  ctx.fillStyle = "rgba(196, 181, 253, 0.25)"; // slightly brighter than background
+  ctx.fillStyle = "rgba(196, 181, 253, 0.45)"; // brighter rain so it's visible
   ctx.font = fontSize + "px monospace";
 
   for (let i = 0; i < drops.length; i++) {
@@ -42,8 +43,8 @@ function drawRain() {
 
     ctx.fillText(text, x, y);
 
-    // VERY SLOW movement: only move every 5 seconds
-    if (Math.random() > 0.995) {
+    // Move VERY slowly — roughly every 5 seconds
+    if (Math.random() > 0.999) {
       drops[i]++;
     }
 
