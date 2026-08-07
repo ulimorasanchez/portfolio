@@ -8,53 +8,57 @@
 
 <body>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="projects.html">Projects</a>
-  <a href="resume.html">Resume</a>
-  <a href="contact.html">Contact</a>
-</nav>
+  <!-- MATRIX BACKGROUND MUST BE FIRST INSIDE BODY -->
+  <canvas id="matrix"></canvas>
 
-<div class="container">
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="resume.html">Resume</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
-  <div class="typing">IT Technician • Web Developer • Always Learning</div>
+  <div class="container">
 
-  <h1>Hey, I'm Ulises</h1>
+    <div class="typing">IT Technician • Web Developer • Always Learning</div>
 
-  <div class="card">
-    <p>
-      Welcome — whether you found me through a job application, my resume, or a shared link,
-      I’m glad you’re here. This site is where I showcase my work, my interests, and the things
-      I’m building as I grow in tech.
-    </p>
+    <h1>Hey, I'm Ulises</h1>
 
-    <p>
-      I’m bilingual (English & Spanish), based in New York City, and open to remote or hybrid
-      opportunities. I enjoy solving problems, building tools, and learning new technologies
-      that make life easier for others.
-    </p>
+    <div class="card">
+      <p>
+        Welcome — whether you found me through a job application, my resume, or a shared link,
+        I’m glad you’re here. This site is where I showcase my work, my interests, and the things
+        I’m building as I grow in tech.
+      </p>
 
-    <p>
-      I currently work part‑time in IT, and I’m looking for meaningful projects or roles where
-      I can contribute, learn, and collaborate with others.
-    </p>
+      <p>
+        I’m bilingual (English & Spanish), based in New York City, and open to remote or hybrid
+        opportunities. I enjoy solving problems, building tools, and learning new technologies
+        that make life easier for others.
+      </p>
 
-    <button onclick="window.location='resume.html'">View Resume</button>
+      <p>
+        I currently work part‑time in IT, and I’m looking for meaningful projects or roles where
+        I can contribute, learn, and collaborate with others.
+      </p>
+
+      <button onclick="window.location='resume.html'">View Resume</button>
+    </div>
+
   </div>
 
-</div>
+  <footer>
+    © 2026 Ulises • 
+    <a href="mailto:ulimoratech@gmail.com">ulimoratech@gmail.com</a> • 
+    <a href="https://www.linkedin.com/in/ulises-mora-061217271" target="_blank">LinkedIn</a>
+  </footer>
 
-<footer>
-  © 2026 Ulises • 
-  <a href="mailto:ulimoratech@gmail.com">ulimoratech@gmail.com</a> • 
-  <a href="https://www.linkedin.com/in/ulises-mora-061217271" target="_blank">LinkedIn</a>
-</footer>
+  <div class="cursor-dot"></div>
+  <div class="cursor-outline"></div>
 
-<div class="cursor-dot"></div>
-<div class="cursor-outline"></div>
-<script src="cursor.js"></script>
-<canvas id="matrix"></canvas>
+  <script src="cursor.js"></script>
+  <script src="matrix.js"></script>
 
 </body>
 </html>
