@@ -168,6 +168,15 @@ form textarea {
   color: #ffffff;
   font-weight: 600; /* bold but not too heavy */
 }
+/* Profile photo styling */
+.profile-photo {
+  width: 260px;              /* fits better on all screens */
+  max-width: 90%;            /* prevents overflow on mobile */
+  border-radius: 18px;       /* keeps your rounded style */
+  display: block;            /* allows centering */
+  margin: 20px auto 30px;    /* centers + adds spacing */
+  box-shadow: 0 0 12px rgba(196, 181, 253, 0.25); /* subtle purple glow */
+}
 
 
 
