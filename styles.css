@@ -150,41 +150,52 @@ form textarea {
 @keyframes blink {
   50% { border-color: transparent; }
 }
-/* ---------- REAL VERTICAL BINARY BACKGROUND ---------- */
+/* ---------- REAL FULLSCREEN BINARY BACKGROUND ---------- */
 body {
   background: #0f0a1f;
   position: relative;
   overflow: hidden;
 }
 
-/* Binary text layer */
+/* Binary layer */
 body::before {
-  content: "0101010011010010110100101101001011010010 0101010011010010110100101101001011010010 0101010011010010110100101101001011010010";
+  content: "";
   position: fixed;
-  top: -200px; /* start slightly above screen */
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  font-size: 18px;
-  line-height: 22px;
-  color: rgba(196, 181, 253, 0.25); /* soft purple */
-  white-space: pre;
   pointer-events: none;
   z-index: -1;
 
-  /* subtle neon glow */
-  text-shadow: 0 0 6px rgba(128, 90, 213, 0.6);
+  /* REAL binary pattern */
+  background-image: 
+    repeating-linear-gradient(
+      to bottom,
+      rgba(196, 181, 253, 0.25) 0px,
+      rgba(196, 181, 253, 0.25) 22px,
+      transparent 22px,
+      transparent 44px
+    ),
+    repeating-linear-gradient(
+      to right,
+      rgba(196, 181, 253, 0.25) 0px,
+      rgba(196, 181, 253, 0.25) 2px,
+      transparent 2px,
+      transparent 40px
+    );
 
-  /* slow vertical movement */
-  animation: binaryScroll 18s linear infinite;
+  /* Soft neon glow */
+  filter: drop-shadow(0 0 4px #a259ff);
+
+  /* Gentle shimmer (NOT scrolling) */
+  animation: shimmer 6s ease-in-out infinite alternate;
+  opacity: 0.45;
 }
 
-@keyframes binaryScroll {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(200px);
-  }
+@keyframes shimmer {
+  from { opacity: 0.35; }
+  to { opacity: 0.55; }
 }
+
 
