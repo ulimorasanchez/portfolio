@@ -11,10 +11,12 @@ const columns = canvas.width / fontSize;
 const drops = Array(Math.floor(columns)).fill(1);
 
 function draw() {
-  ctx.fillStyle = "rgba(15, 10, 31, 0.08)";
+  // darker fade → makes numbers less bright
+  ctx.fillStyle = "rgba(15, 10, 31, 0.15)";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  ctx.fillStyle = "#c4b5fd";
+  // dimmer purple numbers
+  ctx.fillStyle = "rgba(196, 181, 253, 0.35)";
   ctx.font = fontSize + "px monospace";
 
   drops.forEach((y, i) => {
@@ -23,12 +25,14 @@ function draw() {
 
     ctx.fillText(text, x, y * fontSize);
 
-    if (y * fontSize > canvas.height && Math.random() > 0.975) {
+    // slower falling speed (5× slower)
+    if (y * fontSize > canvas.height && Math.random() > 0.995) {
       drops[i] = 0;
     }
 
-    drops[i]++;
+    drops[i] += 0.2; // original was 1 → now 0.2 (5× slower)
   });
 }
 
-setInterval(draw, 50);
+// slower frame rate (optional extra smoothness)
+setInterval(draw, 80); // original was 50 → slower
