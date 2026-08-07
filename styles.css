@@ -69,20 +69,18 @@ nav a:hover {
   z-index: 9999;
 }
 
-/* Purple center dot */
 .cursor-dot {
   width: 8px;
   height: 8px;
-  background: #c4b5fd; /* your purple */
+  background: #c4b5fd;
 }
 
-/* Clean gray circle outline */
 .cursor-outline {
   width: 32px;
   height: 32px;
-  border: 2px solid #bfbfbf; /* light gray */
-  background: transparent;   /* remove purple glow */
-  filter: none;              /* remove blur */
+  border: 2px solid #bfbfbf;
+  background: transparent;
+  filter: none;
   transition: transform 0.15s ease-out;
 }
 
@@ -92,13 +90,14 @@ nav a:hover {
     display: none;
   }
 }
+
 /* ---------- FOOTER ---------- */
 footer {
   text-align: center;
   padding: 25px;
   margin-top: 40px;
-  background: #1a132f; /* dark purple background */
-  color: #c4b5fd; /* purple text */
+  background: #1a132f;
+  color: #c4b5fd;
   font-size: 14px;
 }
 
@@ -151,6 +150,7 @@ form textarea {
   50% { border-color: transparent; }
 }
 
+/* ---------- MATRIX BACKGROUND ---------- */
 #matrix {
   position: fixed;
   top: 0;
@@ -161,22 +161,49 @@ form textarea {
   background: #0f0a1f;
 }
 
-/* Make regular text bold + white */
+/* ---------- REGULAR TEXT BOLD + WHITE ---------- */
 .container p,
 .card p,
 .typing {
   color: #ffffff;
-  font-weight: 600; /* bold but not too heavy */
+  font-weight: 600;
 }
-/* Profile photo styling */
+
+/* ---------- TWO-COLUMN ABOUT LAYOUT ---------- */
+.about-layout {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-photo {
+  flex: 0 0 280px;
+  display: flex;
+  justify-content: center;
+}
+
+/* ---------- PROFILE PHOTO ---------- */
 .profile-photo {
-  width: 260px;              /* fits better on all screens */
-  max-width: 90%;            /* prevents overflow on mobile */
-  border-radius: 18px;       /* keeps your rounded style */
-  display: block;            /* allows centering */
-  margin: 20px auto 30px;    /* centers + adds spacing */
-  box-shadow: 0 0 12px rgba(196, 181, 253, 0.25); /* subtle purple glow */
+  width: 260px;
+  max-width: 100%;
+  border-radius: 18px;
+  box-shadow: 0 0 12px rgba(196, 181, 253, 0.25);
 }
 
+/* ---------- MOBILE RESPONSIVE FIX ---------- */
+@media (max-width: 800px) {
+  .about-layout {
+    flex-direction: column;
+    text-align: center;
+  }
 
-
+  .about-photo {
+    margin-top: 20px;
+  }
+}
