@@ -212,3 +212,38 @@ form textarea {
     margin-top: 20px;
   }
 }
+/* ---------- RESUME BUTTON ---------- */
+.resume-btn {
+  position: relative;
+  padding: 14px 28px;
+  font-size: 18px;
+  font-family: "Courier New", monospace;
+  color: #fff;
+  background: #6a00ff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: 0.3s ease;
+  box-shadow: 0 0 12px rgba(106, 0, 255, 0.6);
+}
+
+.resume-btn:hover {
+  background: #7d1aff;
+  box-shadow: 0 0 18px rgba(140, 0, 255, 0.9);
+  transform: translateY(-2px);
+}
+
+.resume-btn .btn-text::before {
+  content: "View Resume";
+  animation: typing 2s steps(12) infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #fff;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
