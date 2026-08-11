@@ -172,7 +172,7 @@ form textarea {
 /* ---------- TWO-COLUMN ABOUT LAYOUT ---------- */
 .about-layout {
   display: flex;
-  align-items: center;        /* centers photo vertically */
+  align-items: flex-start; /* FIXED */
   justify-content: space-between;
   gap: 50px;
   margin-top: 40px;
@@ -185,20 +185,20 @@ form textarea {
 
 /* Right side photo */
 .about-photo {
-  flex: 0 0 380px;            /* bigger space for the photo */
+  flex: 0 0 380px;
   display: flex;
-  justify-content: center;    /* centers photo horizontally */
-  align-items: center;        /* centers photo vertically */
+  flex-direction: column; /* FIXED */
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 
 /* Profile photo */
 .profile-photo {
-  width: 340px;               /* extended size */
+  width: 340px;
   max-width: 100%;
   border-radius: 18px;
   box-shadow: 0 0 18px rgba(196, 181, 253, 0.25);
-}
-
 }
 
 /* ---------- MOBILE RESPONSIVE FIX ---------- */
@@ -212,6 +212,7 @@ form textarea {
     margin-top: 20px;
   }
 }
+
 /* ---------- RESUME BUTTON ---------- */
 .resume-btn {
   margin-top: 20px;
@@ -236,7 +237,7 @@ form textarea {
   transform: translateY(-2px);
 }
 
-/* Default: text visible, no typing */
+/* Default: text visible */
 .resume-btn .btn-text {
   position: relative;
   display: inline-block;
@@ -249,7 +250,7 @@ form textarea {
   animation: typing 1.8s steps(12) forwards;
 }
 
-/* Cursor */
+/* Cursor blink */
 .resume-btn .btn-text::after {
   content: "";
   position: absolute;
@@ -261,14 +262,8 @@ form textarea {
   animation: cursorBlink 0.8s infinite;
 }
 
-@keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
-}
-
 @keyframes cursorBlink {
   0% { opacity: 1; }
   50% { opacity: 0; }
   100% { opacity: 1; }
 }
-
