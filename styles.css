@@ -169,48 +169,36 @@ form textarea {
   font-weight: 600;
 }
 
-/* ---------- ABOUT PAGE LAYOUT ---------- */
-.about-left {
+/* ---------- TWO-COLUMN ABOUT LAYOUT ---------- */
+.about-layout {
   display: flex;
-  flex-direction: column;
+  align-items: flex-start; /* FIXED */
+  justify-content: space-between;
+  gap: 50px;
+  margin-top: 40px;
+}
+
+/* Left side text */
+.about-text {
+  flex: 1;
+}
+
+/* Right side photo */
+.about-photo {
+  flex: 0 0 380px;
+  display: flex;
+  flex-direction: column; /* FIXED */
+  justify-content: center;
   align-items: center;
-  gap: 25px;
+  gap: 20px;
 }
 
-/* Difuminated Purple Glow Border */
-.photo-wrapper {
-  padding: 10px;
-  border-radius: 22px;
-  background: rgba(196, 181, 253, 0.08);
-  box-shadow: 0 0 25px rgba(196, 181, 253, 0.35);
-}
-
+/* Profile photo */
 .profile-photo {
-  width: 360px;
+  width: 340px;
+  max-width: 100%;
   border-radius: 18px;
-  display: block;
-}
-
-/* Info items under photo */
-.info-grid-left {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  width: 100%;
-}
-
-.info-grid-right {
-  margin-bottom: 25px;
-}
-
-.info-item h3 {
-  color: #c4b5fd;
-  margin-bottom: 4px;
-}
-
-.info-item p {
-  color: #ffffff;
-  font-weight: 600;
+  box-shadow: 0 0 18px rgba(196, 181, 253, 0.25);
 }
 
 /* ---------- MOBILE RESPONSIVE FIX ---------- */
@@ -220,8 +208,8 @@ form textarea {
     text-align: center;
   }
 
-  .about-left {
-    margin-bottom: 30px;
+  .about-photo {
+    margin-top: 20px;
   }
 }
 
