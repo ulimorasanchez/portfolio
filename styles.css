@@ -215,35 +215,47 @@ form textarea {
 /* ---------- RESUME BUTTON ---------- */
 .resume-btn {
   position: relative;
-  padding: 14px 28px;
+  padding: 12px 26px;
   font-size: 18px;
   font-family: "Courier New", monospace;
-  color: #fff;
-  background: #6a00ff;
-  border: none;
-  border-radius: 8px;
+  color: #c4b5fd;
+  background: rgba(15, 10, 31, 0.7);
+  border: 1px solid rgba(196, 181, 253, 0.4);
+  border-radius: 6px;
   cursor: pointer;
   overflow: hidden;
-  transition: 0.3s ease;
-  box-shadow: 0 0 12px rgba(106, 0, 255, 0.6);
+  transition: 0.25s ease;
+  box-shadow: 0 0 12px rgba(196, 181, 253, 0.25);
 }
 
+/* Hover: subtle neon + slight glitch */
 .resume-btn:hover {
-  background: #7d1aff;
-  box-shadow: 0 0 18px rgba(140, 0, 255, 0.9);
+  color: #ffffff;
+  border-color: rgba(196, 181, 253, 0.8);
+  box-shadow: 0 0 18px rgba(196, 181, 253, 0.45);
   transform: translateY(-2px);
 }
 
-.resume-btn .btn-text::before {
-  content: "View Resume";
-  animation: typing 2s steps(12) infinite alternate;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 2px solid #fff;
+/* Typing cursor effect */
+.resume-btn .btn-text {
+  position: relative;
+  padding-right: 8px;
 }
 
-@keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
+.resume-btn .btn-text::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 2px;
+  background: #c4b5fd;
+  animation: cursorBlink 0.8s infinite;
+}
+
+@keyframes cursorBlink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
